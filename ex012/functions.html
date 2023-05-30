@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes</title>
+</head>
+
+<body>
+    <h1>Testes no console</h1>
+    <button class="bake">Click!</button>
+    <script>
+        //anonymous functions e arrow functions
+        // window.onload = function () { alert("Olá, tudo bem?") }
+        window.onload = () => {
+            document.querySelector(".bake").addEventListener("click", () => {
+                console.log("Time to bake the cookies.");
+                cookies.bake(2500);
+            })
+        };
+
+        const cookies = {
+            instructions: "Preheat oven to 350...",
+            bake: (time) => {
+                console.log("Baking the cookies.");
+                setTimeout(done, time);
+            },
+        };
+
+        const done = () => {
+            alert("Cookies are ready, take them out to cool.");
+            console.log("Cooling the cookies.");
+            setTimeout(() => { alert("Cookies are cool, time to eat!"); }, 1000);
+        };
+    </script>
+</body>
+
+</html>

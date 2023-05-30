@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Handler</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #container {
+            width: 300px;
+            height: 300px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: anima 3.2s ease-out 2s;
+        }
+
+        @keyframes anima {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div id="container">
+        <h1>Hello!</h1>
+    </div>
+    <script>
+        setInterval(() => {
+            const body = document.querySelector("#body")
+            const container = document.querySelector("#container")
+            body.style.background = "#333"
+            body.style.transition = "1s ease-out"
+            container.style.background = "#fff"
+            container.style.color = "#333"
+            container.style.transition = "1s ease-out"
+        }, 2000)
+        // Chama uma única vez
+        // setTimeout(timerHandler, 5000)
+
+        // Chama várias vezes
+
+        // Interrompe o setInterval
+        // clearInterval()
+    </script>
+</body>
+
+</html>

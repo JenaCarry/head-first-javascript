@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Guess</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Guess the picture and then click on it to check the answer</h1>
+        <div class="grid">
+            <img id="zero" src="images/zeroblur.jpg" alt="Zero blur">
+            <img id="one" src="images/oneblur.jpg" alt="One blur">
+            <img id="two" src="images/twoblur.jpg" alt="Two blur">
+            <img id="three" src="images/threeblur.jpg" alt="Three blur">
+            <img id="four" src="images/fourblur.jpg" alt="Four blur">
+            <img id="five" src="images/fiveblur.jpg" alt="Five blur">
+        </div>
+        <!-- <div id="res"></div> -->
+    </div>
+    <script>
+        window.onload = () => {
+            const images = document.querySelectorAll("img")
+            images.forEach(element => {
+                element.addEventListener("mouseover", (eventObj) => {
+                    const image = eventObj.target
+                    let name = image.id
+                    name = `images/${name}.jpg`
+                    image.src = name
+                })
+                element.addEventListener("mouseout", (eventObj) => {
+                    const image = eventObj.target
+                    let name = image.id
+                    name = `images/${name}blur.jpg`
+                    image.src = name
+                })
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinates</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #container {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 300px;
+            height: 300px;
+            background-color: lightgray;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Coordinates</h1>
+    </div>
+    <script>
+        window.onload = () => {
+            const container = document.querySelector("#container");
+            container.addEventListener("mousemove", (event) => {
+                let clientX = event.clientX;
+                let clientY = event.clientY;
+                let screenX = event.screenX;
+                let screenY = event.screenY;
+                let pageX = event.pageX;
+                let pageY = event.pageY;
+                let pageXY = `PagX: ${pageX} PagY: ${pageY}`;
+                let clientXY = `ClientX: ${clientX} ClientY: ${clientY}`;
+                let screenXY = `ScreenX: ${screenX} ScreenY: ${screenY}`;
+                container.innerHTML = `${clientXY}<br>${screenXY}<br>${pageXY}`;
+            })
+            container.addEventListener("mouseout", () => {
+                document.querySelector("#container").innerHTML = "<h1>Coordinates</h1>";
+            })
+        }
+    </script>
+</body>
+
+</html>
